@@ -1,0 +1,230 @@
+{
+    // user settings only
+    "window.menuBarVisibility": "toggle",
+    "window.restoreFullscreen": true,
+    // extension
+    "jupyter.askForKernelRestart": false,
+    "vim.normalModeKeyBindings": [
+        {
+            "before":["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["leader", "w"],
+            "commands": ["workbench.action.files.save"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "g", "o" ], "after": [ "o", "<Esc>", "k" ]
+        },
+        {
+            "before": [ "g", "O" ], "after": [ "O", "<Esc>" ]
+        },
+        {
+            "before": [";", "m"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        // multi cursor
+        // need this keybinding both for normal and visual mode
+        {
+            "before": ["<C-d>"],
+            "commands": ["editor.action.addSelectionToNextFindMatch"]
+        },
+        // window move
+        {
+            "before": ["tab"], "after": [ "<C-w>", "w" ]
+        },
+        {
+            "before": ["s", "p"],
+            "commands": [":vsplit"]
+        },
+        {
+            "before": ["s", "h"],
+            "commands": [":split"]
+        },
+        {
+            "before": ["s", "o"],
+            "after": ["<C-w>", "o"]
+        },
+        {
+            "before": ["q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["Q"],
+            "commands": ["workbench.action.closeEditorsAndGroup"]
+        },
+        {
+            "before": ["<space>", "t"],
+            "commands": ["workbench.view.testing.focus"]
+        },
+        {
+            "before": ["<space>", "f"],
+            "commands": ["workbench.view.explorer"]
+        },
+        // lsp
+        {
+            "before": ["K"],
+            "commands": ["editor.action.showHover"]
+        },
+        {
+            "before": ["<space>", "r", "n"],
+            "commands": ["editor.action.rename"]
+        },
+        {
+            "before": ["g", "r"],
+            "commands": ["editor.action.goToReferences"]
+        },
+        // python
+        {
+            "before": ["<C-i>"],
+            "commands": ["editor.action.formatDocument", "python.sortImports"]
+        },
+        // editor is not update without <C-*> keybinding
+        // {
+        //     "before": ["<leader>", "d", "c"],
+        //     "commands": ["workbench.action.focusActiveEditorGroup", "testing.debugAtCursor"]
+        // },
+        // {
+        //     "before": ["<leader>", "t", "c"],
+        //     "commands": ["testing.runAtCursor"]
+        // },
+        // {
+        //     "before": ["<leader>", "t", "f"],
+        //     "commands": ["testing.runCurrentFile"]
+        // },
+        // git related
+        {
+            "before": ["<leader>", "g", "s"],
+            "commands": ["workbench.view.scm"]
+        },
+        {
+            "before": ["<leader>", "g", "a"],
+            "commands": ["git.stage"]
+        },
+        {
+            "before": ["<leader>", "g", "c"],
+            "commands": ["git.commit"]
+        },
+        {
+            "before": ["<leader>", "g", "u"],
+            "commands": ["git.undoCommit"]
+        },
+        {
+            "before": ["<leader>", "g", "m"],
+            "commands": ["git.commitStagedAmend"]
+        },
+        {
+            "before": ["<leader>", "g", "d"],
+            "commands": ["git.openChange"]
+        },
+        {
+            "before": ["["],
+            "commands": ["workbench.action.editor.nextChange"]
+        },
+        // {
+        //     "before": ["["],
+        //     "commands": ["workbench.action.compareEditor.nextChange"],
+        // }
+        // toggle visibility
+        {
+            "before": ["<leader>", "b"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "s"],
+            "commands": ["workbench.action.toggleStatusbarVisibility"]
+        },
+        {
+            "before": ["<C-j>"],
+            "commands": ["workbench.action.togglePanel"]
+        },
+        // search/replace settings
+        {
+            "before": ["<C-h>"],
+            "commands": ["editor.action.startFindReplaceAction"]
+        },
+        {
+            "before": [";", "s"],
+            "commands": ["actions.find"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "g", "r"],
+            "commands": ["git.stageSelectedRanges"]
+        },
+        // multi cursor
+        // need this keybinding both for normal and visual mode
+        {
+            "before": ["<C-d>"],
+            "commands": ["editor.action.addSelectionToNextFindMatch"]
+        },
+        {
+            "before": [";", "e"],
+            "commands": ["editor.debug.action.selectionToRepl"]
+        }
+    ],
+    // ??
+    // objects show/unshow
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showTabs": false,
+    "editor.minimap.enabled": false,
+    "window.titleBarStyle": "custom",
+    "explorer.confirmDelete": false,
+    // working without tab, https://code.visualstudio.com/docs/getstarted/userinterface#_working-without-tabs
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    //
+    "workbench.editor.sharedViewState": true,
+    // cannot commit with full commit msg window,
+    "git.useEditorAsCommitInput": false,
+    // terminal related
+    // use terminal default keybindings rather than vscode, ctrl+k/p, https://code.visualstudio.com/docs/terminal/advanced#_chords
+    "terminal.integrated.allowChords": false,
+    "terminal.integrated.commandsToSkipShell": [
+        // Ensure the toggle sidebar visibility keybinding skips the shell
+        // "workbench.action.toggleSidebarVisibility",
+        // Send quick open's keybinding to the shell
+        "-workbench.action.quickOpen"
+    ],
+    // white space related
+    "editor.renderWhitespace": "trailing",
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    // suggestions,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+    },
+    // ms extension
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "[python]": {
+        // use black-formatter, gain speed up, https://black.readthedocs.io/en/stable/integrations/editors.html#visual-studio-code
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.foldfix": true,
+    "vim.hlsearch": true,
+    "vim.sneak": true,
+    "vim.textwidth": 110,
+    "vim.useSystemClipboard": true,
+    // ??
+    "editor.cursorSurroundingLines": 5,
+    "window.zoomLevel": -1,
+    "editor.tokenColorCustomizations": {
+        "[*]": {
+            "comments": "#719872"
+        }
+    }
+}
