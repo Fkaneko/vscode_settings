@@ -10,7 +10,7 @@
             "commands": [":nohl"]
         },
         {
-            "before": ["leader", "w"],
+            "before": ["<space>", "w"],
             "commands": ["workbench.action.files.save"]
         }
     ],
@@ -22,9 +22,14 @@
             "before": [ "g", "O" ], "after": [ "O", "<Esc>" ]
         },
         {
-            "before": [";", "m"],
+            "before": ["<space>", "m"],
             "commands": ["workbench.action.quickOpen"]
         },
+        {
+            "before": ["<space>", "c"],
+            "commands": ["workbench.action.showCommands"]
+        },
+
         // multi cursor
         // need this keybinding both for normal and visual mode
         {
@@ -55,10 +60,10 @@
             "before": ["Q"],
             "commands": ["workbench.action.closeEditorsAndGroup"]
         },
-        {
-            "before": ["<space>", "t"],
-            "commands": ["workbench.view.testing.focus"]
-        },
+        // {
+        //     "before": ["<space>", "t"],
+        //     "commands": ["workbench.view.testing.focus"]
+        // },
         {
             "before": ["<space>", "f"],
             "commands": ["workbench.view.explorer"]
@@ -78,45 +83,33 @@
         },
         // python
         {
-            "before": ["<C-i>"],
+            // "before": ["<C-i>"],
+            "before": ["<space>", "i"],
             "commands": ["editor.action.formatDocument", "python.sortImports"]
         },
-        // editor is not update without <C-*> keybinding
-        // {
-        //     "before": ["<leader>", "d", "c"],
-        //     "commands": ["workbench.action.focusActiveEditorGroup", "testing.debugAtCursor"]
-        // },
-        // {
-        //     "before": ["<leader>", "t", "c"],
-        //     "commands": ["testing.runAtCursor"]
-        // },
-        // {
-        //     "before": ["<leader>", "t", "f"],
-        //     "commands": ["testing.runCurrentFile"]
-        // },
         // git related
         {
-            "before": ["<leader>", "g", "s"],
+            "before": ["<space>", "g", "s"],
             "commands": ["workbench.view.scm"]
         },
         {
-            "before": ["<leader>", "g", "a"],
+            "before": ["<space>", "g", "a"],
             "commands": ["git.stage"]
         },
         {
-            "before": ["<leader>", "g", "c"],
+            "before": ["<space>", "g", "c"],
             "commands": ["git.commit"]
         },
         {
-            "before": ["<leader>", "g", "u"],
+            "before": ["<space>", "g", "u"],
             "commands": ["git.undoCommit"]
         },
         {
-            "before": ["<leader>", "g", "m"],
+            "before": ["<space>", "g", "m"],
             "commands": ["git.commitStagedAmend"]
         },
         {
-            "before": ["<leader>", "g", "d"],
+            "before": ["<space>", "g", "d"],
             "commands": ["git.openChange"]
         },
         {
@@ -129,11 +122,11 @@
         // }
         // toggle visibility
         {
-            "before": ["<leader>", "b"],
+            "before": ["<space>", "b"],
             "commands": ["workbench.action.toggleSidebarVisibility"]
         },
         {
-            "before": ["<leader>", "s"],
+            "before": ["<space>", "s"],
             "commands": ["workbench.action.toggleStatusbarVisibility"]
         },
         {
@@ -148,11 +141,38 @@
         {
             "before": [";", "s"],
             "commands": ["actions.find"]
+        },
+        // debug
+        {
+            "before": ["<space>", "y"],
+            "commands": ["workbench.debug.action.toggleRepl"]
+        },
+        // python test run/debug
+        {
+
+            "before": ["<space>", "t", "c"],
+            "commands": ["testing.debugAtCursor"]
+        },
+        {
+
+            "before": ["<space>", "t", "r"],
+            "commands": ["testing.runAtCursor"]
+        },
+        {
+
+            "before": ["<space>", "t", "f"],
+            "commands": ["testing.CurrentFile"]
+        },
+        // code action
+        {
+
+            "before": ["<space>", "."],
+            "commands": ["editor.action.quickFix"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "g", "r"],
+            "before": ["<space>", "g", "r"],
             "commands": ["git.stageSelectedRanges"]
         },
         // multi cursor
@@ -162,15 +182,20 @@
             "commands": ["editor.action.addSelectionToNextFindMatch"]
         },
         {
-            "before": [";", "e"],
+            // "before": [";", "e"],
+            "before": ["<space>"],
             "commands": ["editor.debug.action.selectionToRepl"]
+        },
+        // code action
+        // need this keybinding both for normal and visual mode
+        {
+
+            "before": ["<space>", "."],
+            "commands": ["editor.action.quickFix"]
         }
     ],
     // ??
     // objects show/unshow
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    "workbench.statusBar.visible": false,
     "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
@@ -221,7 +246,6 @@
     "vim.useSystemClipboard": true,
     // ??
     "editor.cursorSurroundingLines": 5,
-    "window.zoomLevel": -1,
     "editor.tokenColorCustomizations": {
         "[*]": {
             "comments": "#719872"
