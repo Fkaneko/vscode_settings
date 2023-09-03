@@ -10,7 +10,7 @@
             "commands": [":nohl"]
         },
         {
-            "before": ["leader", "w"],
+            "before": ["<space>", "w"],
             "commands": ["workbench.action.files.save"]
         }
     ],
@@ -22,8 +22,12 @@
             "before": [ "g", "O" ], "after": [ "O", "<Esc>" ]
         },
         {
-            "before": [";", "m"],
+            "before": ["<space>", "m"],
             "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<space>", "c"],
+            "commands": ["workbench.action.showCommands"]
         },
         // multi cursor
         // need this keybinding both for normal and visual mode
@@ -55,10 +59,28 @@
             "before": ["Q"],
             "commands": ["workbench.action.closeEditorsAndGroup"]
         },
+        // window transition
         {
-            "before": ["<space>", "t"],
-            "commands": ["workbench.view.testing.focus"]
+            "before": ["<space>", "1"],
+            "commands": ["workbench.action.focusFirstEditorGroup"]
         },
+        {
+            "before": ["<space>", "2"],
+            "commands": ["workbench.action.focusSecondEditorGroup"]
+        },
+        {
+            "before": ["<space>", "3"],
+            "commands": ["workbench.action.focusThirdEditorGroup"]
+        },
+        {
+            "before": ["<space>", "4"],
+            "commands": ["workbench.action.focusFourthEditorGroup"]
+        },
+
+        // {
+        //     "before": ["<space>", "t"],
+        //     "commands": [["workbench.view.testing.focus"]]
+        // },
         {
             "before": ["<space>", "f"],
             "commands": ["workbench.view.explorer"]
@@ -78,45 +100,37 @@
         },
         // python
         {
-            "before": ["<C-i>"],
+            // "before": ["<C-i>"],
+            "before": ["<space>", "i"],
             "commands": ["editor.action.formatDocument", "python.sortImports"]
         },
-        // editor is not update without <C-*> keybinding
-        // {
-        //     "before": ["<leader>", "d", "c"],
-        //     "commands": ["workbench.action.focusActiveEditorGroup", "testing.debugAtCursor"]
-        // },
-        // {
-        //     "before": ["<leader>", "t", "c"],
-        //     "commands": ["testing.runAtCursor"]
-        // },
-        // {
-        //     "before": ["<leader>", "t", "f"],
-        //     "commands": ["testing.runCurrentFile"]
-        // },
+        {
+            "before": ["<space>", "o"],
+            "commands": ["editor.action.formatDocument", "python.sortImports", "workbench.action.files.save"]
+        },
         // git related
         {
-            "before": ["<leader>", "g", "s"],
+            "before": ["g", "s"],
             "commands": ["workbench.view.scm"]
         },
         {
-            "before": ["<leader>", "g", "a"],
+            "before": ["g", "a"],
             "commands": ["git.stage"]
         },
         {
-            "before": ["<leader>", "g", "c"],
+            "before": ["g", "k"],
             "commands": ["git.commit"]
         },
         {
-            "before": ["<leader>", "g", "u"],
+            "before": ["g", "u"],
             "commands": ["git.undoCommit"]
         },
         {
-            "before": ["<leader>", "g", "m"],
+            "before": ["g", "M"],
             "commands": ["git.commitStagedAmend"]
         },
         {
-            "before": ["<leader>", "g", "d"],
+            "before": ["g", "n"],
             "commands": ["git.openChange"]
         },
         {
@@ -129,11 +143,11 @@
         // }
         // toggle visibility
         {
-            "before": ["<leader>", "b"],
+            "before": ["<space>", "b"],
             "commands": ["workbench.action.toggleSidebarVisibility"]
         },
         {
-            "before": ["<leader>", "s"],
+            "before": ["<space>", "s"],
             "commands": ["workbench.action.toggleStatusbarVisibility"]
         },
         {
@@ -148,30 +162,71 @@
         {
             "before": [";", "s"],
             "commands": ["actions.find"]
+        },
+        // debug
+        {
+            "before": ["<space>", "y"],
+            "commands": ["workbench.debug.action.toggleRepl"],
+        },
+        // python test run/debug
+        {
+
+            "before": ["<space>", "t", "c"],
+            "commands": ["testing.debugAtCursor"]
+        },
+        {
+
+            "before": ["<space>", "t", "r"],
+            "commands": ["testing.runAtCursor"]
+        },
+        {
+
+            "before": ["<space>", "t", "f"],
+            "commands": ["testing.CurrentFile"]
+        },
+        // code action
+        {
+
+            "before": ["<space>", "."],
+            "commands": ["editor.action.quickFix"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<leader>", "g", "r"],
+            "before": ["g", "r"],
             "commands": ["git.stageSelectedRanges"]
         },
-        // multi cursor
+        {
+            "before": ["g", "e"],
+            "commands": ["git.revertSelectedRanges"]
+        },
+        {
+            // "before": [";", "e"],
+            "before": ["<space>"],
+            "commands": ["editor.debug.action.selectionToRepl"]
+        },
         // need this keybinding both for normal and visual mode
+        // multi cursor
         {
             "before": ["<C-d>"],
             "commands": ["editor.action.addSelectionToNextFindMatch"]
         },
+        // command
         {
-            "before": [";", "e"],
-            "commands": ["editor.debug.action.selectionToRepl"]
+            "before": ["<space>", "m"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<space>", "c"],
+            "commands": ["workbench.action.showCommands"]
+        },
+        // code action
+        {
+
+            "before": ["<space>", "."],
+            "commands": ["editor.action.quickFix"]
         }
     ],
-    // ??
-    // objects show/unshow
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    "workbench.statusBar.visible": false,
-    "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
     "window.titleBarStyle": "custom",
@@ -197,8 +252,6 @@
     "editor.renderWhitespace": "trailing",
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
-    // suggestions,
-    "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "on",
@@ -209,7 +262,8 @@
     "python.linting.mypyEnabled": true,
     "[python]": {
         // use black-formatter, gain speed up, https://black.readthedocs.io/en/stable/integrations/editors.html#visual-studio-code
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
     },
     "python.formatting.provider": "none",
     "vim.camelCaseMotion.enable": true,
@@ -221,7 +275,6 @@
     "vim.useSystemClipboard": true,
     // ??
     "editor.cursorSurroundingLines": 5,
-    "window.zoomLevel": -1,
     "editor.tokenColorCustomizations": {
         "[*]": {
             "comments": "#719872"
