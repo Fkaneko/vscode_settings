@@ -29,7 +29,6 @@
             "before": ["<space>", "c"],
             "commands": ["workbench.action.showCommands"]
         },
-
         // multi cursor
         // need this keybinding both for normal and visual mode
         {
@@ -60,9 +59,60 @@
             "before": ["Q"],
             "commands": ["workbench.action.closeEditorsAndGroup"]
         },
+        // easy motion
+        {
+            "before": ["leader", "j"],
+            "after": ["leader", "leader", "j"]
+        },
+        {
+            "before": ["leader", "k"],
+            "after": ["leader", "leader", "k"]
+        },
+        {
+            "before": ["leader", "s"],
+            "after": ["leader", "leader", "s"]
+        },
+        {
+            "before": ["leader", "f"],
+            "after": ["leader", "leader", "f"]
+        },
+        {
+            "before": ["leader", "F"],
+            "after": ["leader", "leader", "F"]
+        },
+        {
+            "before": ["leader", "w"],
+            "after": ["leader", "leader", "w"]
+        },
+        {
+            "before": ["leader", "b"],
+            "after": ["leader", "leader", "b"]
+        },
+        {
+            "before": ["leader", "leader", "b", "d", "w"],
+            "after": ["leader", "leader", "leader", "b", "d", "w"]
+        },
+        // window transition
+        {
+            "before": ["<space>", "1"],
+            "commands": ["workbench.action.focusFirstEditorGroup"]
+        },
+        {
+            "before": ["<space>", "2"],
+            "commands": ["workbench.action.focusSecondEditorGroup"]
+        },
+        {
+            "before": ["<space>", "3"],
+            "commands": ["workbench.action.focusThirdEditorGroup"]
+        },
+        {
+            "before": ["<space>", "4"],
+            "commands": ["workbench.action.focusFourthEditorGroup"]
+        },
+
         // {
         //     "before": ["<space>", "t"],
-        //     "commands": ["workbench.view.testing.focus"]
+        //     "commands": [["workbench.view.testing.focus"]]
         // },
         {
             "before": ["<space>", "f"],
@@ -87,29 +137,33 @@
             "before": ["<space>", "i"],
             "commands": ["editor.action.formatDocument", "python.sortImports"]
         },
+        {
+            "before": ["<space>", "o"],
+            "commands": ["editor.action.formatDocument", "python.sortImports", "workbench.action.files.save"]
+        },
         // git related
         {
-            "before": ["<space>", "g", "s"],
+            "before": ["g", "s"],
             "commands": ["workbench.view.scm"]
         },
         {
-            "before": ["<space>", "g", "a"],
+            "before": ["g", "a"],
             "commands": ["git.stage"]
         },
         {
-            "before": ["<space>", "g", "c"],
+            "before": ["g", "k"],
             "commands": ["git.commit"]
         },
         {
-            "before": ["<space>", "g", "u"],
+            "before": ["g", "u"],
             "commands": ["git.undoCommit"]
         },
         {
-            "before": ["<space>", "g", "m"],
+            "before": ["g", "M"],
             "commands": ["git.commitStagedAmend"]
         },
         {
-            "before": ["<space>", "g", "d"],
+            "before": ["g", "n"],
             "commands": ["git.openChange"]
         },
         {
@@ -145,7 +199,7 @@
         // debug
         {
             "before": ["<space>", "y"],
-            "commands": ["workbench.debug.action.toggleRepl"]
+            "commands": ["workbench.debug.action.toggleRepl"],
         },
         // python test run/debug
         {
@@ -172,31 +226,40 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            "before": ["<space>", "g", "r"],
+            "before": ["g", "r"],
             "commands": ["git.stageSelectedRanges"]
         },
-        // multi cursor
-        // need this keybinding both for normal and visual mode
         {
-            "before": ["<C-d>"],
-            "commands": ["editor.action.addSelectionToNextFindMatch"]
+            "before": ["g", "e"],
+            "commands": ["git.revertSelectedRanges"]
         },
         {
             // "before": [";", "e"],
             "before": ["<space>"],
             "commands": ["editor.debug.action.selectionToRepl"]
         },
-        // code action
         // need this keybinding both for normal and visual mode
+        // multi cursor
+        {
+            "before": ["<C-d>"],
+            "commands": ["editor.action.addSelectionToNextFindMatch"]
+        },
+        // command
+        {
+            "before": ["<space>", "m"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<space>", "c"],
+            "commands": ["workbench.action.showCommands"]
+        },
+        // code action
         {
 
             "before": ["<space>", "."],
             "commands": ["editor.action.quickFix"]
         }
     ],
-    // ??
-    // objects show/unshow
-    "workbench.activityBar.visible": false,
     "workbench.editor.showTabs": false,
     "editor.minimap.enabled": false,
     "window.titleBarStyle": "custom",
@@ -222,8 +285,6 @@
     "editor.renderWhitespace": "trailing",
     "files.trimTrailingWhitespace": true,
     "files.trimFinalNewlines": true,
-    // suggestions,
-    "editor.acceptSuggestionOnEnter": "off",
     "editor.quickSuggestions": {
         "other": "on",
         "comments": "on",
@@ -234,7 +295,8 @@
     "python.linting.mypyEnabled": true,
     "[python]": {
         // use black-formatter, gain speed up, https://black.readthedocs.io/en/stable/integrations/editors.html#visual-studio-code
-        "editor.defaultFormatter": "ms-python.black-formatter"
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnType": true
     },
     "python.formatting.provider": "none",
     "vim.camelCaseMotion.enable": true,
