@@ -57,22 +57,33 @@
         "key": "y",
         "command": "copyRelativeFilePath",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-        // "when": "!editorFocus"
     },
     {
         "key": "shift+y",
         "command": "copyFilePath",
         "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
     },
+    {
+        "key": "shift+y",
+        "command": "copyFilePath",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "q",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+    },
     // list move
     // go to file selection & command
     {
-        "key": "ctrl+k",
+        // "key": "ctrl+k",
+        "key": ",", // aggressive mapping
         "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
         "when": "inQuickOpen"
     },
     {
-        "key": "ctrl+j",
+        // "key": "ctrl+j",
+        "key": ".", // aggressive mapping
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inQuickOpen"
     },
@@ -101,21 +112,25 @@
     {
         "key": "j",
         "command": "selectNextCodeAction",
+        // "when": "actionWidgetVisible"
         "when": "codeActionMenuVisible"
     },
     {
         "key": "k",
         "command": "selectPrevCodeAction",
+        // "when": "actionWidgetVisible"
         "when": "codeActionMenuVisible"
     },
     {
         "key": "q",
         "command": "hideCodeActionWidget",
+        // "when": "actionWidgetVisible"
         "when": "codeActionMenuVisible"
     },
     {
         "key": "tab",
         "command": "acceptSelectedCodeAction",
+        // "when": "actionWidgetVisible"
         "when": "codeActionMenuVisible"
     },
     // breadcrumbs
