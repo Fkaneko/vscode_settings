@@ -59,6 +59,39 @@
             "before": ["Q"],
             "commands": ["workbench.action.closeEditorsAndGroup"]
         },
+        // easy motion
+        {
+            "before": ["leader", "j"],
+            "after": ["leader", "leader", "j"]
+        },
+        {
+            "before": ["leader", "k"],
+            "after": ["leader", "leader", "k"]
+        },
+        {
+            "before": ["leader", "s"],
+            "after": ["leader", "leader", "s"]
+        },
+        {
+            "before": ["leader", "f"],
+            "after": ["leader", "leader", "f"]
+        },
+        {
+            "before": ["leader", "F"],
+            "after": ["leader", "leader", "F"]
+        },
+        {
+            "before": ["leader", "w"],
+            "after": ["leader", "leader", "w"]
+        },
+        {
+            "before": ["leader", "b"],
+            "after": ["leader", "leader", "b"]
+        },
+        {
+            "before": ["leader", "leader", "b", "d", "w"],
+            "after": ["leader", "leader", "leader", "b", "d", "w"]
+        },
         // window transition
         {
             "before": ["<space>", "1"],
