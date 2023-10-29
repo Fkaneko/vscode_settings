@@ -320,5 +320,8 @@
         "[*]": {
             "comments": "#719872"
         }
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1  // for vscode vim performance improvement
     }
 }
