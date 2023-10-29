@@ -187,6 +187,43 @@
             "before": ["<C-j>"],
             "commands": ["workbench.action.togglePanel"]
         },
+        {
+            "before": ["<space>", "p"],
+            "commands": [":registers"]
+        },
+        {
+            "before": ["<space>", "j"],
+            "commands": [":marks"]
+        },
+        // bookmark
+        {
+            "before": ["m", "n"],
+            "commands": ["bookmarks.jumpToNext"]
+        },
+        {
+            "before": ["m", "p"],
+            "commands": ["bookmarks.jumpToPrevious"]
+        },
+        {
+            "before": ["m", "t"],
+            "commands": ["bookmarks.toggle"]
+        },
+        {
+            "before": ["m", "l"],
+            "commands": ["bookmarks.list"]
+        },
+        {
+            "before": ["m", "L"],
+            "commands": ["bookmarks.listFromAllFiles"]
+        },
+        {
+            "before": ["m", "c"],
+            "commands": ["bookmarks.clear"]
+        },
+        {
+            "before": ["m", "C"],
+            "commands": ["bookmarks.clearFromAllFiles"]
+        },
         // search/replace settings
         {
             "before": ["<C-h>"],
@@ -312,5 +349,8 @@
         "[*]": {
             "comments": "#719872"
         }
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1  // for vscode vim performance improvement
     }
 }
